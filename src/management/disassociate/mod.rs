@@ -4,6 +4,7 @@ mod fixed_parameters;
 pub use self::{builder::*, fixed_parameters::*};
 use super::*;
 
+#[derive(Debug)]
 pub struct DisassociateFrame<'a> {
     bytes: Cow<'a, [u8]>,
 }

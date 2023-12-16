@@ -1,5 +1,6 @@
 use super::*;
 
+#[derive(Debug)]
 pub struct ProbeRequestFrame<'a> {
     bytes: &'a [u8],
 }

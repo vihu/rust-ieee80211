@@ -22,6 +22,7 @@ pub struct ManagementFrame<'a> {
     bytes: Cow<'a, [u8]>,
 }
 
+#[derive(Debug)]
 pub enum ManagementFrameLayer<'a> {
     Beacon(BeaconFrame<'a>),
     ProbeRequest(ProbeRequestFrame<'a>),

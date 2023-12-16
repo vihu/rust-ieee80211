@@ -3,6 +3,7 @@ mod fixed_parameters;
 pub use self::fixed_parameters::*;
 use super::*;
 
+#[derive(Debug)]
 pub struct BeaconFrame<'a> {
     bytes: &'a [u8],
 }
