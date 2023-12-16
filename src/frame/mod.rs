@@ -5,6 +5,7 @@ use super::*;
 use byteorder::{ByteOrder, LittleEndian};
 use std::borrow::Cow;
 
+#[derive(Debug)]
 pub enum FrameLayer<'a> {
     Management(ManagementFrame<'a>),
     Control(ControlFrame<'a>),
@@ -26,12 +27,8 @@ impl<'a> Frame<'a> {
             FrameType::Management => {
                 Some(FrameLayer::Management(ManagementFrame::new(self.bytes())))
             }
-            FrameType::Control => {
-                Some(FrameLayer::Control(ControlFrame::new(self.bytes())))
-            },
-            FrameType::Data => {
-                Some(FrameLayer::Data(DataFrame::new(self.bytes())))
-            },
+            FrameType::Control => Some(FrameLayer::Control(ControlFrame::new(self.bytes()))),
+            FrameType::Data => Some(FrameLayer::Data(DataFrame::new(self.bytes()))),
             _ => None,
         }
     }

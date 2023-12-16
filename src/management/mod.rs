@@ -17,6 +17,7 @@ pub use self::{
 use super::*;
 use std::borrow::Cow;
 
+#[derive(Debug)]
 pub struct ManagementFrame<'a> {
     bytes: Cow<'a, [u8]>,
 }

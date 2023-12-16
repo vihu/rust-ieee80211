@@ -4,6 +4,7 @@ pub use self::builder::*;
 use super::*;
 use std::borrow::Cow;
 
+#[derive(Debug)]
 pub struct DataFrame<'a> {
     bytes: Cow<'a, [u8]>,
 }

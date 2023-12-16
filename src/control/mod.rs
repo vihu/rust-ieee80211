@@ -1,6 +1,7 @@
 use super::*;
 use std::borrow::Cow;
 
+#[derive(Debug)]
 pub struct ControlFrame<'a> {
     bytes: Cow<'a, [u8]>,
 }
